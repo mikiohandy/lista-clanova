@@ -6,7 +6,7 @@ display();
     
 var poruka = '<p>Uspešno ste uneli podatke</p>';
     
-    $('#unesi-dugme').keypress(function(e){
+    $('#unesi-dugme').on('click', function(e){
       e.preventDefault();
         
         var ime = $('#ime').val(),
@@ -15,7 +15,7 @@ var poruka = '<p>Uspešno ste uneli podatke</p>';
             email = $('#email').val(),
             telefon = $('#telefon').val();
         
-        $.ajax({ 
+            $.ajax({ 
             url: "https://api.mlab.com/api/1/databases/my-first-mongo/collections/members?apiKey=nzIFzNz9TATGyU-0a7h37qlZTP-RpBU4",
             data: JSON.stringify({ 
                 "ime": ime,
@@ -33,6 +33,8 @@ var poruka = '<p>Uspešno ste uneli podatke</p>';
                 console.log(err);
             }
         });  
+        
+        
         display();
     });
  
