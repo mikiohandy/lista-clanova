@@ -1,0 +1,19 @@
+li{
+    list-style: none;
+}
+#top-row{
+     margin-top: 10%;
+}
+#unesi-dugme{
+  margin: 20px 0 0px 15px;
+}
+.row div {
+    margin-top: 10px;
+}
+#display-row{
+    margin: 40px 0px 0px 0px;   
+}
+.well {
+    border: 1px solid rgb(219, 219, 219);
+    padding: 15px 10px 0px 10px;
+}
