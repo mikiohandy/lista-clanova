@@ -34,18 +34,19 @@ var poruka = '<p>Uspešno ste uneli podatke</p>';
             }
         });  
         
-        
+    
         display();
     });
  
 display();
-    
+
+/*
 function display (){
             $.ajax({ 
             url: "https://api.mlab.com/api/1/databases/my-first-mongo/collections/members?apiKey=nzIFzNz9TATGyU-0a7h37qlZTP-RpBU4"}).done(function(data){
                 var output = '<div>';
                 $.each(data, function(key, data){
-                    output += '<div class = "well">';
+                    output += '<div class = "well">';       
                     output += '<h4>'+ data.ime + ' ' + data.prezime + '</h4>'; 
                     output += '<p>'+ data.adresa +'</p>';
                     output += '<p>'+ data.email +'</p>';
@@ -55,7 +56,32 @@ function display (){
                 output += '</div>';
                 $('#display-row').html(output);
             });  
-};    
+};  
+*/
+function display (){
+            $.ajax({ 
+            url: "https://api.mlab.com/api/1/databases/my-first-mongo/collections/members?apiKey=nzIFzNz9TATGyU-0a7h37qlZTP-RpBU4"}).done(function(data){
+                var output = '<table class="table table-hover"><thead><tr><th>#</th><th>Ime</th><th>Prezime</th><th>Adresa</th></tr></thead><tbody>';
+                 $.each(data, function(index, data){
+                     
+                    output += '<tr><th scope="row">'+ (index + 1) +'</th><td>'+data.ime+'</td><td>'+data.prezime+'</td><td>'+data.adresa+'</td></tr>';
+                });
+                output += '</tbody></table>';
+                $('#display-row').html(output);
+            });  
+};  
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 });
