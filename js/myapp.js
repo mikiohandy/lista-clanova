@@ -61,10 +61,11 @@ function display (){
 function display (){
             $.ajax({ 
             url: "https://api.mlab.com/api/1/databases/my-first-mongo/collections/members?apiKey=nzIFzNz9TATGyU-0a7h37qlZTP-RpBU4"}).done(function(data){
-                var output = '<table class="table table-hover"><thead><tr><th>#</th><th>Ime</th><th>Prezime</th><th>Adresa</th></tr></thead><tbody>';
+                var output = '<table class="table table-hover"><thead><tr><th>#</th><th>Ime</th><th>Prezime</th><th>Adresa</th><th>Članarina</th></tr></thead><tbody>',
+                    switchButton = '<div class="switch"><label>Off<input type="checkbox"><span class="lever"></span>On</label></div>';
                  $.each(data, function(index, data){
                      
-                    output += '<tr><th scope="row">'+ (index + 1) +'</th><td>'+data.ime+'</td><td>'+data.prezime+'</td><td>'+data.adresa+'</td></tr>';
+                    output += '<tr><th scope="row">'+ (index + 1) +'</th><td>'+data.ime+'</td><td>'+data.prezime+'</td><td>'+data.adresa+'</td><td>'+switchButton+'</td></tr>';
                 });
                 output += '</tbody></table>';
                 $('#display-row').html(output);
