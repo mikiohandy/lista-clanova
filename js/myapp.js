@@ -68,7 +68,7 @@ function display (){
                 
                  $.each(data, function(index,data){
                      
-                     var switchButton = '<div class="switch"><label>Off<input data-id="'+data._id.$oid+'" data-switchstatus="'+data.clanarina+'"type="checkbox"><span class="lever"></span>On</label></div>';
+                     var switchButton = '<div id="proba" class="switch"><label>Off<input data-id="'+data._id.$oid+'" data-switchstatus="'+data.clanarina+'"type="checkbox"><span class="lever"></span>On</label></div>';
                      
                     output += '<tr><th scope="row">'+ (index + 1) +'</th><td>'+data.ime+'</td><td>'+data.prezime+'</td><td>'+data.adresa+'</td><td>'+data.telefon+'</td><td>'+switchButton+'</td></tr>';
                     });
@@ -81,7 +81,7 @@ function display (){
     
 // SWITCH BUTTON
     
-$(this).on('click','input', function(){
+$('#display-row').on('click', 'input', function(){
         var id = $(this).data('id'),
             switchCheck = $(this).data('switchstatus'),
                // console.log(switchCheck),
@@ -98,7 +98,7 @@ $(this).on('click','input', function(){
     
     
 });
-               
+              
 
 
     
