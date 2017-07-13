@@ -17,3 +17,7 @@ li{
     border: 1px solid rgb(219, 219, 219);
     padding: 15px 10px 0px 10px;
 }
+.background img {
+      width: 100%;
+      margin-top: -10px;
+}
