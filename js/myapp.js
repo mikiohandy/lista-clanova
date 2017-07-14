@@ -1,5 +1,7 @@
 $(document).ready(function(){
     
+    $(".button-collapse").sideNav();
+    
     display();
     
     
@@ -64,7 +66,7 @@ function display (){
             $.ajax({ 
             url: "https://api.mlab.com/api/1/databases/my-first-mongo/collections/members?apiKey=nzIFzNz9TATGyU-0a7h37qlZTP-RpBU4"}).done(function(data){
                 
-                var output = '<table class="table table-hover"><thead><tr><th>#</th><th>Ime</th><th>Prezime</th><th>Adresa</th>         <th>Telefon</th><th>Članarina</th><th>Datum</th></tr></thead><tbody>';
+                var output = '<table class="responsive-table table-hover"><thead><tr><th>#</th><th>Ime</th><th>Prezime</th><th>Adresa</th>         <th>Telefon</th><th>Članarina</th><th>Datum</th></tr></thead><tbody>';
                     
                 
                  $.each(data, function(index,data){
@@ -144,7 +146,7 @@ $('#display-row').on('click','#dateButton', function(){
             console.log(switchCheck);     
 }); 
     
-$(".button-collapse").sideNav();
+
 
     
     
